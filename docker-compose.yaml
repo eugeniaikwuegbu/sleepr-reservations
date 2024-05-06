@@ -11,6 +11,8 @@ services:
       - '3000:3000'
     volumes:
       - .:/usr/src/app
+    networks:
+      - sleepr-network
   auth:
     build:
       context: .
@@ -23,5 +25,12 @@ services:
       - '3001:3001'
     volumes:
       - .:/usr/src/app 
+    networks:
+      - sleepr-network
   mongo: 
-    image: mongo    
+    image: mongo 
+    networks:
+      - sleepr-network
+networks:
+  sleepr-network:
+    driver: bridge

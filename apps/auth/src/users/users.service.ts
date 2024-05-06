@@ -37,7 +37,6 @@ export class UsersService {
   }
 
   async getUser(getUseDto: GetUserDto) {
-    console.log('userDto', getUseDto);
     return this.userRepository.findOne(getUseDto);
   }
 
