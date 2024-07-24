@@ -27,6 +27,7 @@ import { UsersService } from './users/users.service';
         HTTP_PORT: Joi.number().required(),
         COOKIE_EXPIRY: Joi.string().required(),
       }),
+      envFilePath: "./apps/auth/.env"
     }),
     JwtModule.registerAsync({
       useFactory: (configService: ConfigService) => ({
