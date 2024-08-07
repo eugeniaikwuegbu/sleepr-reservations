@@ -1,4 +1,4 @@
-import { DatabaseModule } from '@app/common';
+import { DatabaseModule, User, UserSchema } from '@app/common';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
@@ -7,7 +7,6 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategies';
 import { LocalStrategy } from './strategies/local.strategies';
-import { User, UserSchema } from './users/entities/users.schema';
 import { UserRepository } from './users/user.repository';
 import { UsersModule } from './users/users.module';
 import { UsersService } from './users/users.service';
@@ -27,7 +26,7 @@ import { UsersService } from './users/users.service';
         HTTP_PORT: Joi.number().required(),
         COOKIE_EXPIRY: Joi.string().required(),
       }),
-      envFilePath: "./apps/auth/.env"
+      envFilePath: './apps/auth/.env',
     }),
     JwtModule.registerAsync({
       useFactory: (configService: ConfigService) => ({

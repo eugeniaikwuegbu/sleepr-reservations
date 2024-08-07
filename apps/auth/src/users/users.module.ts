@@ -1,9 +1,8 @@
-import { DatabaseModule, LoggerModule } from '@app/common';
+import { DatabaseModule, LoggerModule, User, UserSchema } from '@app/common';
 import { Module } from '@nestjs/common';
-import { User, UserSchema } from './entities/users.schema';
+import { UserRepository } from './user.repository';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
-import { UserRepository } from './user.repository';
 
 @Module({
   imports: [
