@@ -5,13 +5,16 @@ WORKDIR /usr/src/app
 COPY package.json ./
 COPY package-lock.json ./
 COPY tsconfig.json tsconfig.json
+COPY nest-cli.json nest-cli.json
 
-RUN npm install
+RUN npm install -g pnpm
 
 COPY apps/reservations apps/reservations
 COPY libs libs
 
-RUN npm run build
+RUN pnpm install -r
+
+RUN npm run build reservations
 
 FROM node:alpine As production
 
