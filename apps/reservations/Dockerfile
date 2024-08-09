@@ -14,7 +14,7 @@ COPY libs libs
 
 RUN pnpm install -r
 
-RUN npm run build reservations
+RUN pnpm run build reservations
 
 FROM node:alpine As production
 

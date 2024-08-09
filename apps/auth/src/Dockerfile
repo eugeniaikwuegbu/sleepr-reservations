@@ -6,7 +6,6 @@ COPY package.json ./
 COPY package-lock.json ./
 COPY tsconfig.json tsconfig.json
 
-
 RUN npm install
 
 COPY apps/auth apps/auth
