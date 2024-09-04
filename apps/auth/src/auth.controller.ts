@@ -21,6 +21,7 @@ export class AuthController {
     @CurrentUser() user: UsersDocument,
     @Res({ passthrough: true }) response: Response,
   ) {
+    console.log('user===>', user);
     return await this.authService.login(user, response);
     // response.send(user);
   }
@@ -28,6 +29,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @MessagePattern('authenticate')
   async authenticate(@Payload() data: any) {
+    console.log('data===>', data);
     return data?.user;
   }
 }
