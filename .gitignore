@@ -2,6 +2,8 @@
 **/dist
 **/node_modules
 
+k8s/sleepr-k8s-deply-key
+
 env
 .env
 
