@@ -1,4 +1,4 @@
-import { DatabaseModule, User, UserSchema } from '@app/common';
+import { DatabaseModule, HealthModule, User, UserSchema } from '@app/common';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
@@ -37,6 +37,7 @@ import { UsersService } from './users/users.service';
       }),
       inject: [ConfigService],
     }),
+    HealthModule,
   ],
   controllers: [AuthController],
   providers: [
