@@ -15,7 +15,7 @@ spec:
         app: reservations
     spec:
       containers:
-        - image: us-east1-docker.pkg.dev/sleepr-430521/reservations/production
+        - image: 150010133403.dkr.ecr.eu-north-1.amazonaws.com/reservations:latest
           name: reservations
           env:
             - name: MONGODB_URI

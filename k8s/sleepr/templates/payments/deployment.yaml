@@ -15,14 +15,14 @@ spec:
         app: payments
     spec:
       containers:
-        - image: us-east1-docker.pkg.dev/sleepr-430521/payments/production
+        - image: 150010133403.dkr.ecr.eu-north-1.amazonaws.com/payments:latest
           name: payments
           env:
             - name: STRIPE_SECRET_KEY
               valueFrom:
-                secretKeyRef: 
-                  name:  stripe
-                  key : apiKey
+                secretKeyRef:
+                  name: stripe
+                  key: apiKey
             - name: PORT
               value: '3001'
             - name: NOTIFICATIONS_HOST
